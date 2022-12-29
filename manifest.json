@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Video-Extension",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "host_permissions":[
+    "file:///*.mp4"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["file:///*.mp4"],
+      "js": ["content-script.js"]
+    }
+  ]
+}

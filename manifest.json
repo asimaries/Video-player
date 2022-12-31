@@ -3,13 +3,30 @@
   "name": "Video-Extension",
   "description": "Base Level Extension",
   "version": "1.0",
-  "host_permissions":[
-    "file:///*.mp4"
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "file:///*.mp4",
+    "https://*.zee5.com/*"
   ],
   "content_scripts": [
     {
-      "matches": ["file:///*.mp4"],
-      "js": ["content-script.js"]
+      "matches": [
+        "file:///*.mp4"
+      ],
+      "js": [
+        "content-script-mp4.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://*.zee5.com/*"
+      ],
+      "js": [
+        "content-script-zee5.js"
+      ]
     }
   ]
 }
